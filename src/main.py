@@ -213,8 +213,13 @@ def main():
             index += 1
 
     with open(f"{filename}.hack", "w") as file:
-        for bin in binary:
-            file.write(bin + "\n")
+        last_line = len(binary) - 1
+
+        for index, bin in enumerate(binary):
+            file.write(bin)
+
+            if index != last_line:
+                file.write("\n")
 
 
 if __name__ == "__main__":
